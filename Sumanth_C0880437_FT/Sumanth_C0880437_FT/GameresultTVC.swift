@@ -8,7 +8,8 @@
 import UIKit
 
 class GameresultTVC: UITableViewController {
-
+    var resultset:[String] = []
+    weak var delegate:ViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
 

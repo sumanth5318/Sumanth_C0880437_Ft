@@ -42,6 +42,9 @@
                                     <action selector="oddcheck:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ljK-0y-PFo"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TIz-FK-Skg">
+                                <rect key="frame" x="50" y="577.66666666666663" width="293" height="190.33333333333337"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -51,8 +54,12 @@
                             <constraint firstItem="5Cn-5W-ZHv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="6cl-Qt-bIq"/>
                             <constraint firstItem="vjJ-ml-Mjr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="75" id="9Pk-iS-ylG"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vjJ-ml-Mjr" secondAttribute="trailing" constant="100" id="DJF-zE-ZRV"/>
+                            <constraint firstItem="TIz-FK-Skg" firstAttribute="top" secondItem="5Cn-5W-ZHv" secondAttribute="bottom" constant="150" id="J9s-Jo-aon"/>
                             <constraint firstItem="Lcf-Qo-StR" firstAttribute="top" secondItem="vjJ-ml-Mjr" secondAttribute="bottom" constant="70" id="Zos-Pw-8lM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TIz-FK-Skg" secondAttribute="bottom" constant="50" id="kf5-in-ENo"/>
                             <constraint firstItem="Lcf-Qo-StR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="m1Q-OG-g2t"/>
+                            <constraint firstItem="TIz-FK-Skg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="o5M-MS-B3Q"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TIz-FK-Skg" secondAttribute="trailing" constant="50" id="oXC-qF-sci"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Lcf-Qo-StR" secondAttribute="trailing" constant="100" id="rbp-9e-GQM"/>
                             <constraint firstItem="vjJ-ml-Mjr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="100" id="tcq-7n-AnR"/>
                         </constraints>
@@ -62,6 +69,7 @@
                         <outlet property="even" destination="Lcf-Qo-StR" id="SUl-OX-l8c"/>
                         <outlet property="number" destination="vjJ-ml-Mjr" id="fQC-mp-0BS"/>
                         <outlet property="odd" destination="5Cn-5W-ZHv" id="wHl-Wg-lGp"/>
+                        <outlet property="resultimage" destination="TIz-FK-Skg" id="HfC-l0-oOv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -69,32 +77,22 @@
             <point key="canvasLocation" x="1028.2442748091603" y="3.5211267605633805"/>
         </scene>
         <!--GameresultTVC-->
-        <scene sceneID="WUR-5a-V4u">
+        <scene sceneID="3hw-56-pDd">
             <objects>
-                <tableViewController storyboardIdentifier="gamescene" id="d2E-Yl-pZW" customClass="GameresultTVC" customModule="Sumanth_C0880437_FT" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="0NN-j2-wF0">
+                <tableViewController storyboardIdentifier="gamescene" id="rFR-XD-JAG" customClass="GameresultTVC" customModule="Sumanth_C0880437_FT" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="9w2-Rt-yKt">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="j42-jZ-KQ2">
-                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="j42-jZ-KQ2" id="bfV-8J-GjT">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="d2E-Yl-pZW" id="DCz-xb-iFB"/>
-                            <outlet property="delegate" destination="d2E-Yl-pZW" id="U2y-xf-JP6"/>
+                            <outlet property="dataSource" destination="rFR-XD-JAG" id="X15-e7-ZTg"/>
+                            <outlet property="delegate" destination="rFR-XD-JAG" id="PAy-At-4j2"/>
                         </connections>
                     </tableView>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WuR-E8-cdA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dut-Iy-UeB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1759.5419847328244" y="0.0"/>
+            <point key="canvasLocation" x="1786" y="-13"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="gFG-Cv-eM2">
