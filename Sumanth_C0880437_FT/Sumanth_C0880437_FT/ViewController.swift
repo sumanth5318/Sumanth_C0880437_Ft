@@ -23,21 +23,18 @@ class ViewController: UIViewController {
     let infoAlert = UIAlertController(title: "Result", message: "you entered right answer", preferredStyle: .alert)
     @IBAction func evencheck(_ sender: Any) {
         checkEven()
-       // let infoAlert = UIAlertController(title: "Result", message: "you entered right answer", preferredStyle: .alert)
         showError(infoAlert)
-        
     }
     @IBAction func oddcheck(_ sender: Any) {
         checkOdd()
-        //let infoAlert = UIAlertController(title: "Result", message: "you entered right answer", preferredStyle: .alert)
         showError(infoAlert)
         
     }
     
     private func showError(_ alert: UIAlertController) {
-        let action = UIAlertAction(title: "Playagain", style: .cancel,handler: { _ in self.loadRandomNumber()})
+        let action = UIAlertAction(title: "Playagain", style: .default,handler: { _ in self.loadRandomNumber()})
         alert.addAction(action)
-        let Action = UIAlertAction(title: "Show progress", style: .default)
+        let Action = UIAlertAction(title: "Show progress", style: .default,handler: { _ in self.resultscreen()})
         alert.addAction(Action)
         present(alert, animated: true)
     }
@@ -48,7 +45,7 @@ class ViewController: UIViewController {
             infoAlert.message = "Hurry its right answer"
             loadRandomNumber()
         }else{
-            infoAlert.message = "oops wrong answer"
+            infoAlert.message = "oops wrong answer \n correct answer is Odd"
         }
     }
     
@@ -59,8 +56,14 @@ class ViewController: UIViewController {
             infoAlert.message = ("Hurry its right answer")
             loadRandomNumber()
         }else{
-            infoAlert.message = "oops wrong answer"
+            infoAlert.message = "oops wrong answer \n correct answer is even"
         }
+    }
+    
+    func resultscreen(){
+        let mainSB : UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+        let GameresultTVC = mainSB.instantiateViewController(withIdentifier: "gamescene")
+        navigationController?.pushViewController(GameresultTVC, animated: true)
     }
     
     func isEven(number: Int) -> Bool {
